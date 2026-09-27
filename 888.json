@@ -1170,7 +1170,7 @@
   "logo": "https://easyzz.dpdns.org/easytv.jpg",
   "lives": [
     {
-      "name": "自建TV",
+      "name": "EasyTV",
       "type": 0,
       "url": "https://easyzz.dpdns.org/api/tv.png",
       "timeout": 10,
@@ -1178,7 +1178,7 @@
       "playerType": 2
     },
     {
-      "name": "自建秒播",
+      "name": "Easy秒播",
       "type": 0,
       "url": "http://45.192.97.170:5211/311758",
       "timeout": 10,
