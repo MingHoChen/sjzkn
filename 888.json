@@ -119,7 +119,7 @@
       ]
     }
   ],
-  "spider": "./spider.jar;md5;abc13beac287a298e6b7ca91af7404cd",
+  "spider": "https://ghproxy.net/https://raw.githubusercontent.com/FongMi/CatVodSpider/main/jar/custom_spider.jar",
   "wallpaper": "http://127.0.0.1:9978/proxy?do=wallpaper",
   "parses": [
     {
@@ -245,7 +245,7 @@
   "sites": [
     {
       "key": "豆瓣",
-      "name": "888888",
+      "name": "888",
       "type": 3,
       "api": "csp_Douban",
       "searchable": 0,
