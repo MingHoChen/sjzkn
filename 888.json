@@ -135,6 +135,28 @@
       "timeout": 15
     },
     {
+      "key": "配置中心",
+      "name": "配置 • 中心",
+      "type": 3,
+      "api": "csp_Config",
+      "searchable": 0,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15
+    },
+    {
+      "key": "本地",
+      "name": "本地 • 视频",
+      "type": 3,
+      "api": "csp_LocalFile",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15
+    },
+    {
       "key": "预告",
       "name": "新片 • 预告",
       "type": 3,
