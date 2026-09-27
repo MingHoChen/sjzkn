@@ -1,5 +1,5 @@
 {
-  "spider": "./jar/easy.jar",
+  "spider": "https://ghproxy.net/https://raw.githubusercontent.com/FongMi/CatVodSpider/main/jar/custom_spider.jar",
   "wallpaper": "http://127.0.0.1:9978/proxy?do=wallpaper",
   "parses": [
     {
@@ -3668,7 +3668,7 @@
   "logo": "./logo.gif",
   "lives": [
     {
-      "name": "自建TV",
+      "name": "EasyTV",
       "type": 0,
       "url": "https://easyzz.dpdns.org/api/tv.png",
       "timeout": 10,
@@ -3676,7 +3676,7 @@
       "playerType": 2
     },
     {
-      "name": "自建秒播",
+      "name": "Easy秒播",
       "type": 0,
       "url": "http://45.192.97.170:5211/311758",
       "timeout": 10,
