@@ -151,6 +151,30 @@
   ],
   "sites": [
     {
+      "key": "4K影视_py",
+      "name": "4K影视",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/4Kyingshi.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "4K影院_py",
+      "name": "4K影院",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/4k.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
       "key": "剧下饭4K",
       "name": "剧下饭-A-4K",
       "type": 3,
@@ -175,6 +199,30 @@
       "group": "影视综合"
     },
     {
+      "key": "瓜子APP",
+      "name": "瓜子-A-APP",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E7%93%9C%E5%AD%90APP.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "瓜子APP_py",
+      "name": "瓜子-B-APP",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/guaziAPP.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
       "key": "11",
       "name": "暴风资源",
       "type": 1,
@@ -184,6 +232,18 @@
       "filterable": 1,
       "changeable": 1,
       "timeout": 12
+    },
+    {
+      "key": "厂长影视_py",
+      "name": "厂长影视",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/changzhangyingshi.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
     },
     {
       "key": "4",
@@ -254,30 +314,6 @@
       "group": "影视综合"
     },
     {
-      "key": "4K影视_py",
-      "name": "4K影视",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/4Kyingshi.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "4K影院_py",
-      "name": "4K影院",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/4k.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
       "key": "16",
       "name": "新浪资源",
       "type": 1,
@@ -305,30 +341,6 @@
       "name": "初见影视",
       "type": 3,
       "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/chujianyingshi.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "瓜子APP",
-      "name": "瓜子-A-APP",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E7%93%9C%E5%AD%90APP.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "瓜子APP_py",
-      "name": "瓜子-B-APP",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/guaziAPP.py",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
@@ -532,18 +544,6 @@
       "name": "茶杯狐",
       "type": 3,
       "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/chabeihu.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "厂长影视_py",
-      "name": "厂长影视",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/changzhangyingshi.py",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
