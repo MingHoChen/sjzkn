@@ -231,7 +231,8 @@
       "quickSearch": 1,
       "filterable": 1,
       "changeable": 1,
-      "timeout": 12
+      "timeout": 12,
+      "group": "采集源"
     },
     {
       "key": "厂长影视_py",
@@ -254,7 +255,8 @@
       "quickSearch": 1,
       "filterable": 1,
       "changeable": 1,
-      "timeout": 12
+      "timeout": 12,
+      "group": "采集源"
     },
     {
       "key": "兔岛影院_刁民_py",
@@ -277,7 +279,8 @@
       "quickSearch": 1,
       "filterable": 1,
       "changeable": 1,
-      "timeout": 12
+      "timeout": 12,
+      "group": "采集源"
     },
     {
       "key": "1",
@@ -288,7 +291,8 @@
       "quickSearch": 1,
       "filterable": 1,
       "changeable": 1,
-      "timeout": 12
+      "timeout": 12,
+      "group": "采集源"
     },
     {
       "key": "6",
@@ -299,7 +303,8 @@
       "quickSearch": 1,
       "filterable": 1,
       "changeable": 1,
-      "timeout": 12
+      "timeout": 12,
+      "group": "采集源"
     },
     {
       "key": "多多影视_py",
@@ -322,7 +327,8 @@
       "quickSearch": 1,
       "filterable": 1,
       "changeable": 1,
-      "timeout": 12
+      "timeout": 12,
+      "group": "采集源"
     },
     {
       "key": "可可影视_py",
@@ -370,7 +376,7 @@
       "filterable": 0,
       "changeable": 0,
       "timeout": 15,
-      "group": "平台源"
+      "group": "影视综合"
     },
     {
       "key": "腾讯视频",
@@ -382,7 +388,7 @@
       "filterable": 0,
       "changeable": 0,
       "timeout": 15,
-      "group": "平台源"
+      "group": "影视综合"
     },
     {
       "key": "芒果TV_py",
@@ -394,7 +400,7 @@
       "filterable": 0,
       "changeable": 0,
       "timeout": 15,
-      "group": "平台源"
+      "group": "影视综合"
     },
     {
       "key": "21",
@@ -405,7 +411,8 @@
       "quickSearch": 1,
       "filterable": 1,
       "changeable": 1,
-      "timeout": 12
+      "timeout": 12,
+      "group": "采集源"
     },
     {
       "key": "优酷视频_py",
@@ -417,7 +424,7 @@
       "filterable": 0,
       "changeable": 0,
       "timeout": 15,
-      "group": "平台源"
+      "group": "影视综合"
     },
     {
       "key": "30剧集网_py",
@@ -628,138 +635,6 @@
       "name": "第七影院",
       "type": 3,
       "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/diqiyingyuan.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "酷我音乐_py",
-      "name": "酷我音乐",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/kuwoyinyue.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "枫叶音乐_py",
-      "name": "枫叶音乐",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/fengyeyinyue.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "音乐聚合_py",
-      "name": "音乐聚合",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/yinyuejuhe.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "千千音乐_py",
-      "name": "千千音乐",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/qianqianyinyue.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "轻音乐_py",
-      "name": "轻音乐",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/%E8%BD%BB%E9%9F%B3%E4%B9%90.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "爱听_音乐",
-      "name": "爱听•音乐",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/%E7%88%B1%E5%90%AC%E9%9F%B3%E4%B9%90.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "影子音乐",
-      "name": "影子音乐",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/yingziyinyue.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "悦听吧_py",
-      "name": "悦听吧",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/yuetingba.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "儿歌乐园_py",
-      "name": "儿歌乐园",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/%E5%84%BF%E6%AD%8C%E4%B9%90%E5%9B%AD.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "DJ呦呦_py",
-      "name": "DJ呦呦",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/DJyouyou.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "275听书_py",
-      "name": "275听书",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/275tingshu.py",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
@@ -1356,18 +1231,6 @@
       "group": "影视综合"
     },
     {
-      "key": "易听书网_py",
-      "name": "易听书网",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/yitingshuwang.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
       "key": "云途影视",
       "name": "云途影视",
       "type": 3,
@@ -1582,6 +1445,78 @@
       "changeable": 0,
       "timeout": 15,
       "group": "影视综合"
+    },
+    {
+      "key": "_动漫_共和国动漫_py",
+      "name": "共和国动漫",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%8A%A8%E6%BC%AB/gongheguodongman.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "动漫"
+    },
+    {
+      "key": "_动漫_青空次元_py",
+      "name": "青空次元",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%8A%A8%E6%BC%AB/qingkongciyuan.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "动漫"
+    },
+    {
+      "key": "_动漫_动漫巴士_py",
+      "name": "动漫巴士",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%8A%A8%E6%BC%AB/dongmanbashi.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "动漫"
+    },
+    {
+      "key": "_动漫_樱之空动漫_py",
+      "name": "樱之空动漫",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%8A%A8%E6%BC%AB/yingzhikongdongman.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "动漫"
+    },
+    {
+      "key": "_动漫_MiFun动漫_py",
+      "name": "MiFun动漫",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%8A%A8%E6%BC%AB/MiFundongman.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "动漫"
+    },
+    {
+      "key": "_动漫_黑猫动漫",
+      "name": "黑猫动漫",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%8A%A8%E6%BC%AB/heimaodongman.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "动漫"
     },
     {
       "key": "蚕驰短剧网",
@@ -1824,78 +1759,6 @@
       "group": "短剧"
     },
     {
-      "key": "_动漫_动漫巴士_py",
-      "name": "动漫巴士",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%8A%A8%E6%BC%AB/dongmanbashi.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "动漫"
-    },
-    {
-      "key": "_动漫_共和国动漫_py",
-      "name": "共和国动漫",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%8A%A8%E6%BC%AB/gongheguodongman.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "动漫"
-    },
-    {
-      "key": "_动漫_黑猫动漫",
-      "name": "黑猫动漫",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%8A%A8%E6%BC%AB/heimaodongman.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "动漫"
-    },
-    {
-      "key": "_动漫_MiFun动漫_py",
-      "name": "MiFun动漫",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%8A%A8%E6%BC%AB/MiFundongman.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "动漫"
-    },
-    {
-      "key": "_动漫_青空次元_py",
-      "name": "青空次元",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%8A%A8%E6%BC%AB/qingkongciyuan.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "动漫"
-    },
-    {
-      "key": "_动漫_樱之空动漫_py",
-      "name": "樱之空动漫",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%8A%A8%E6%BC%AB/yingzhikongdongman.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "动漫"
-    },
-    {
       "key": "百年直播_py",
       "name": "百年直播",
       "type": 3,
@@ -2026,6 +1889,150 @@
       "changeable": 0,
       "timeout": 15,
       "group": "直播"
+    },
+    {
+      "key": "酷我音乐_py",
+      "name": "酷我音乐",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/kuwoyinyue.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "音乐"
+    },
+    {
+      "key": "枫叶音乐_py",
+      "name": "枫叶音乐",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/fengyeyinyue.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "音乐"
+    },
+    {
+      "key": "音乐聚合_py",
+      "name": "音乐聚合",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/yinyuejuhe.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "音乐"
+    },
+    {
+      "key": "千千音乐_py",
+      "name": "千千音乐",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/qianqianyinyue.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "音乐"
+    },
+    {
+      "key": "轻音乐_py",
+      "name": "轻音乐",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/%E8%BD%BB%E9%9F%B3%E4%B9%90.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "音乐"
+    },
+    {
+      "key": "爱听_音乐",
+      "name": "爱听•音乐",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/%E7%88%B1%E5%90%AC%E9%9F%B3%E4%B9%90.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "音乐"
+    },
+    {
+      "key": "影子音乐",
+      "name": "影子音乐",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/yingziyinyue.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "音乐"
+    },
+    {
+      "key": "悦听吧_py",
+      "name": "悦听吧",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/yuetingba.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "音乐"
+    },
+    {
+      "key": "儿歌乐园_py",
+      "name": "儿歌乐园",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/%E5%84%BF%E6%AD%8C%E4%B9%90%E5%9B%AD.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "音乐"
+    },
+    {
+      "key": "DJ呦呦_py",
+      "name": "DJ呦呦",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/DJyouyou.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "音乐"
+    },
+    {
+      "key": "275听书_py",
+      "name": "275听书",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/275tingshu.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "音乐"
+    },
+    {
+      "key": "易听书网_py",
+      "name": "易听书网",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/yitingshuwang.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "音乐"
     }
   ],
   "lives": [
