@@ -151,40 +151,28 @@
   ],
   "sites": [
     {
-      "key": "爱奇艺_py",
-      "name": "爱奇艺",
+      "key": "剧下饭4K",
+      "name": "剧下饭-A-4K",
       "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%B9%B3%E5%8F%B0%E6%BA%90/aiqiyi.py",
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E5%89%A7%E4%B8%8B%E9%A5%AD4K%F0%9F%8D%80TG%20%40hshsjk9.py",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
       "changeable": 0,
       "timeout": 15,
-      "group": "平台源"
+      "group": "影视综合"
     },
     {
-      "key": "腾讯视频",
-      "name": "腾讯视频",
+      "key": "剧下饭4K_py",
+      "name": "剧下饭-B-4K",
       "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%B9%B3%E5%8F%B0%E6%BA%90/tengxunshipin.py",
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/juxiafan4K.py",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
       "changeable": 0,
       "timeout": 15,
-      "group": "平台源"
-    },
-    {
-      "key": "芒果TV_py",
-      "name": "芒果TV",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%B9%B3%E5%8F%B0%E6%BA%90/mangguoTV.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "平台源"
+      "group": "影视综合"
     },
     {
       "key": "11",
@@ -254,6 +242,42 @@
       "timeout": 12
     },
     {
+      "key": "多多影视_py",
+      "name": "多多影视",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/duoduoyingshi.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "4K影视_py",
+      "name": "4K影视",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/4Kyingshi.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "4K影院_py",
+      "name": "4K影院",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/4k.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
       "key": "16",
       "name": "新浪资源",
       "type": 1,
@@ -263,6 +287,102 @@
       "filterable": 1,
       "changeable": 1,
       "timeout": 12
+    },
+    {
+      "key": "可可影视_py",
+      "name": "可可影视",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/kekeyingshi.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "初见影视_py",
+      "name": "初见影视",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/chujianyingshi.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "瓜子APP",
+      "name": "瓜子-A-APP",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E7%93%9C%E5%AD%90APP.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "瓜子APP_py",
+      "name": "瓜子-B-APP",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/guaziAPP.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "腾爱优芒B",
+      "name": "腾爱优芒-合集",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E8%85%BE%E7%88%B1%E4%BC%98%E8%8A%92B%F0%9F%8D%80TG%20%40hshsjk9.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "爱奇艺_py",
+      "name": "爱奇艺",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%B9%B3%E5%8F%B0%E6%BA%90/aiqiyi.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "平台源"
+    },
+    {
+      "key": "腾讯视频",
+      "name": "腾讯视频",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%B9%B3%E5%8F%B0%E6%BA%90/tengxunshipin.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "平台源"
+    },
+    {
+      "key": "芒果TV_py",
+      "name": "芒果TV",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%B9%B3%E5%8F%B0%E6%BA%90/mangguoTV.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "平台源"
     },
     {
       "key": "21",
@@ -288,58 +408,10 @@
       "group": "平台源"
     },
     {
-      "key": "275听书_py",
-      "name": "275听书",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/275tingshu.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
       "key": "30剧集网_py",
       "name": "30剧集网",
       "type": 3,
       "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/30jujiwang.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "4K影院_py",
-      "name": "4K影院",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/4k.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "4K影视_py",
-      "name": "4K影视",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/4Kyingshi.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "4K影视仓",
-      "name": "4K影视仓",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/4Kyingshicang.py",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
@@ -480,18 +552,6 @@
       "group": "影视综合"
     },
     {
-      "key": "初见影视_py",
-      "name": "初见影视",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/chujianyingshi.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
       "key": "CNFLIX",
       "name": "CNFLIX",
       "type": 3,
@@ -576,6 +636,114 @@
       "group": "影视综合"
     },
     {
+      "key": "酷我音乐_py",
+      "name": "酷我音乐",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/kuwoyinyue.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "枫叶音乐_py",
+      "name": "枫叶音乐",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/fengyeyinyue.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "音乐聚合_py",
+      "name": "音乐聚合",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/yinyuejuhe.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "千千音乐_py",
+      "name": "千千音乐",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/qianqianyinyue.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "轻音乐_py",
+      "name": "轻音乐",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/%E8%BD%BB%E9%9F%B3%E4%B9%90.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "爱听_音乐",
+      "name": "爱听•音乐",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/%E7%88%B1%E5%90%AC%E9%9F%B3%E4%B9%90.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "影子音乐",
+      "name": "影子音乐",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/yingziyinyue.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "悦听吧_py",
+      "name": "悦听吧",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/yuetingba.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "儿歌乐园_py",
+      "name": "儿歌乐园",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/%E5%84%BF%E6%AD%8C%E4%B9%90%E5%9B%AD.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
       "key": "DJ呦呦_py",
       "name": "DJ呦呦",
       "type": 3,
@@ -588,10 +756,10 @@
       "group": "影视综合"
     },
     {
-      "key": "豆花影视_py",
-      "name": "豆花影视",
+      "key": "275听书_py",
+      "name": "275听书",
       "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/douhuayingshi.py",
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/275tingshu.py",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
@@ -600,10 +768,10 @@
       "group": "影视综合"
     },
     {
-      "key": "多多影视_py",
-      "name": "多多影视",
+      "key": "豆花影视_py",
+      "name": "豆花影视",
       "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/duoduoyingshi.py",
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/douhuayingshi.py",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
@@ -696,30 +864,6 @@
       "group": "影视综合"
     },
     {
-      "key": "枫叶音乐_py",
-      "name": "枫叶音乐",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/fengyeyinyue.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "瓜子APP_py",
-      "name": "瓜子APP",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/guaziAPP.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
       "key": "河马剧场_py",
       "name": "河马剧场",
       "type": 3,
@@ -768,18 +912,6 @@
       "group": "影视综合"
     },
     {
-      "key": "剧下饭4K_py",
-      "name": "剧下饭4K",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/juxiafan4K.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
       "key": "开端影视",
       "name": "开端影视",
       "type": 3,
@@ -820,30 +952,6 @@
       "name": "看戏影视",
       "type": 3,
       "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/kanxiyingshi.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "可可影视_py",
-      "name": "可可影视",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/kekeyingshi.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "酷我音乐_py",
-      "name": "酷我音乐",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/kuwoyinyue.py",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
@@ -948,18 +1056,6 @@
       "group": "影视综合"
     },
     {
-      "key": "千千音乐_py",
-      "name": "千千音乐",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/qianqianyinyue.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
       "key": "麒麟影视_py",
       "name": "麒麟影视",
       "type": 3,
@@ -1000,6 +1096,18 @@
       "name": "热播APP",
       "type": 3,
       "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/reboAPP.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "农民影视",
+      "name": "农民影视",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E5%86%9C%E6%B0%91%E5%BD%B1%E8%A7%86.py",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
@@ -1057,12 +1165,24 @@
     },
     {
       "key": "腾爱优芒B_py",
-      "name": "腾爱优芒B",
+      "name": "腾爱优芒A",
       "type": 3,
       "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/tengaiyoumangB.py",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "蝶卡影视",
+      "name": "蝶卡影视",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E8%9D%B6%E5%8D%A1%E5%BD%B1%E8%A7%86.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
       "changeable": 0,
       "timeout": 15,
       "group": "影视综合"
@@ -1104,10 +1224,34 @@
       "group": "影视综合"
     },
     {
+      "key": "草莓影视",
+      "name": "草莓影视",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E8%8D%89%E8%8E%93%E5%BD%B1%E8%A7%86%F0%9F%8D%80TG%20%40hshsjk9.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
       "key": "网飞猫影视",
       "name": "网飞猫影视",
       "type": 3,
       "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/wangfeimaoyingshi_guanti.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "八戒影视",
+      "name": "八戒影视",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E5%85%AB%E6%88%92%E5%BD%B1%E8%A7%86%F0%9F%8D%80TG%20%40hshsjk9.py",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
@@ -1188,25 +1332,13 @@
       "group": "影视综合"
     },
     {
-      "key": "影子音乐",
-      "name": "影子音乐",
+      "key": "初见影视",
+      "name": "初见影视",
       "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/yingziyinyue.py",
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E5%88%9D%E8%A7%81%E5%BD%B1%E8%A7%86.py",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "音乐聚合_py",
-      "name": "音乐聚合",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/yinyuejuhe.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
+      "filterable": 1,
       "changeable": 0,
       "timeout": 15,
       "group": "影视综合"
@@ -1236,10 +1368,10 @@
       "group": "影视综合"
     },
     {
-      "key": "悦听吧_py",
-      "name": "悦听吧",
+      "key": "云途影视",
+      "name": "云途影视",
       "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/yuetingba.py",
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/yuntuyingshi.py",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
@@ -1248,13 +1380,49 @@
       "group": "影视综合"
     },
     {
-      "key": "云途影视",
-      "name": "云途影视",
+      "key": "4K影视",
+      "name": "4K影视",
       "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/yuntuyingshi.py",
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/4K%E5%BD%B1%E8%A7%86.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "袋鼠影视",
+      "name": "袋鼠影视",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E8%A2%8B%E9%BC%A0%E5%BD%B1%E8%A7%86.py",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "30剧集网",
+      "name": "30剧集网",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/30%E5%89%A7%E9%9B%86%E7%BD%91%F0%9F%8D%80TG%20%40hshsjk9.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "豆花影视",
+      "name": "豆花影视",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E8%B1%86%E8%8A%B1%E5%BD%B1%E8%A7%86.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
       "changeable": 0,
       "timeout": 15,
       "group": "影视综合"
@@ -1296,6 +1464,30 @@
       "group": "影视综合"
     },
     {
+      "key": "厂长资源_py",
+      "name": "厂长资源",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E8%B5%84%E6%BA%90%E7%AB%99/changzhangziyuan.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "资源站"
+    },
+    {
+      "key": "毒舌影视",
+      "name": "毒舌影视",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E6%AF%92%E8%88%8C%E5%BD%B1%E8%A7%86.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
       "key": "ZIP0影视",
       "name": "ZIP0影视",
       "type": 3,
@@ -1308,10 +1500,22 @@
       "group": "影视综合"
     },
     {
-      "key": "儿歌乐园_py",
-      "name": "儿歌乐园",
+      "key": "大马猴",
+      "name": "大马猴",
       "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/%E5%84%BF%E6%AD%8C%E4%B9%90%E5%9B%AD.py",
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E5%A4%A7%E9%A9%AC%E7%8C%B4%F0%9F%8D%80TG%20%40hshsjk9.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "宅男影视",
+      "name": "宅男影视",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E5%AE%85%E7%94%B7%E5%BD%B1%E8%A7%86%F0%9F%8D%80TG%20%40hshsjk9.py",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
@@ -1324,6 +1528,18 @@
       "name": "北斗影院",
       "type": 3,
       "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/%E5%8C%97%E6%96%97%E5%BD%B1%E9%99%A2.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "影视综合"
+    },
+    {
+      "key": "采集聚合_py",
+      "name": "采集聚合",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E8%B5%84%E6%BA%90%E7%AB%99/caijijuhe.py",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
@@ -1356,46 +1572,10 @@
       "group": "影视综合"
     },
     {
-      "key": "星影4K_刁民_py",
-      "name": "星影4K",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/%E6%98%9F%E5%BD%B14K.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "爱听_音乐",
-      "name": "爱听•音乐",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/%E7%88%B1%E5%90%AC%E9%9F%B3%E4%B9%90.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
       "key": "独播库_py",
       "name": "独播库",
       "type": 3,
       "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/%E7%8B%AC%E6%92%AD%E5%BA%93.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "轻音乐_py",
-      "name": "轻音乐",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E5%BD%B1%E8%A7%86%E7%BB%BC%E5%90%88/%E8%BD%BB%E9%9F%B3%E4%B9%90.py",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
@@ -1548,112 +1728,16 @@
       "group": "短剧"
     },
     {
-      "key": "4K影视",
-      "name": "4K影视",
+      "key": "短剧聚合",
+      "name": "短剧聚合",
       "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/4K%E5%BD%B1%E8%A7%86.py",
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E7%9F%AD%E5%89%A7%E8%81%9A%E5%90%88.py",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
       "changeable": 0,
       "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "30剧集网",
-      "name": "30剧集网",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/30%E5%89%A7%E9%9B%86%E7%BD%91%F0%9F%8D%80TG%20%40hshsjk9.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "八戒影视",
-      "name": "八戒影视",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E5%85%AB%E6%88%92%E5%BD%B1%E8%A7%86%F0%9F%8D%80TG%20%40hshsjk9.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "草莓影视",
-      "name": "草莓影视",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E8%8D%89%E8%8E%93%E5%BD%B1%E8%A7%86%F0%9F%8D%80TG%20%40hshsjk9.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "初见影视",
-      "name": "初见影视",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E5%88%9D%E8%A7%81%E5%BD%B1%E8%A7%86.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "大马猴",
-      "name": "大马猴",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E5%A4%A7%E9%A9%AC%E7%8C%B4%F0%9F%8D%80TG%20%40hshsjk9.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "袋鼠影视",
-      "name": "袋鼠影视",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E8%A2%8B%E9%BC%A0%E5%BD%B1%E8%A7%86.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "蝶卡影视",
-      "name": "蝶卡影视",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E8%9D%B6%E5%8D%A1%E5%BD%B1%E8%A7%86.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "豆花影视",
-      "name": "豆花影视",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E8%B1%86%E8%8A%B1%E5%BD%B1%E8%A7%86.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
+      "group": "短剧"
     },
     {
       "key": "毒舌短剧",
@@ -1665,19 +1749,7 @@
       "filterable": 1,
       "changeable": 0,
       "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "毒舌影视",
-      "name": "毒舌影视",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E6%AF%92%E8%88%8C%E5%BD%B1%E8%A7%86.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
+      "group": "短剧"
     },
     {
       "key": "短剧巴士",
@@ -1689,55 +1761,7 @@
       "filterable": 1,
       "changeable": 0,
       "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "短剧聚合",
-      "name": "短剧聚合",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E7%9F%AD%E5%89%A7%E8%81%9A%E5%90%88.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "瓜子APP",
-      "name": "瓜子APP",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E7%93%9C%E5%AD%90APP.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "剧下饭4K",
-      "name": "剧下饭4K",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E5%89%A7%E4%B8%8B%E9%A5%AD4K%F0%9F%8D%80TG%20%40hshsjk9.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "农民影视",
-      "name": "农民影视",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E5%86%9C%E6%B0%91%E5%BD%B1%E8%A7%86.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
+      "group": "短剧"
     },
     {
       "key": "刷不停短剧",
@@ -1749,19 +1773,7 @@
       "filterable": 0,
       "changeable": 0,
       "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "腾爱优芒B",
-      "name": "腾爱优芒B",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E8%85%BE%E7%88%B1%E4%BC%98%E8%8A%92B%F0%9F%8D%80TG%20%40hshsjk9.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
+      "group": "短剧"
     },
     {
       "key": "悟圣短剧",
@@ -1773,19 +1785,7 @@
       "filterable": 0,
       "changeable": 0,
       "timeout": 15,
-      "group": "影视综合"
-    },
-    {
-      "key": "星芽短剧",
-      "name": "星芽短剧",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E6%98%9F%E8%8A%BD%E7%9F%AD%E5%89%A7.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "影视综合"
+      "group": "短剧"
     },
     {
       "key": "映刻短剧",
@@ -1797,19 +1797,19 @@
       "filterable": 1,
       "changeable": 0,
       "timeout": 15,
-      "group": "影视综合"
+      "group": "短剧"
     },
     {
-      "key": "宅男影视",
-      "name": "宅男影视",
+      "key": "星芽短剧",
+      "name": "星芽短剧",
       "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E5%AE%85%E7%94%B7%E5%BD%B1%E8%A7%86%F0%9F%8D%80TG%20%40hshsjk9.py",
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E6%98%9F%E8%8A%BD%E7%9F%AD%E5%89%A7.py",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 0,
+      "filterable": 1,
       "changeable": 0,
       "timeout": 15,
-      "group": "影视综合"
+      "group": "短剧"
     },
     {
       "key": "红果短剧",
@@ -1821,7 +1821,7 @@
       "filterable": 0,
       "changeable": 0,
       "timeout": 15,
-      "group": "影视综合"
+      "group": "短剧"
     },
     {
       "key": "_动漫_动漫巴士_py",
@@ -1896,30 +1896,6 @@
       "group": "动漫"
     },
     {
-      "key": "采集聚合_py",
-      "name": "采集聚合",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E8%B5%84%E6%BA%90%E7%AB%99/caijijuhe.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "资源站"
-    },
-    {
-      "key": "厂长资源_py",
-      "name": "厂长资源",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E8%B5%84%E6%BA%90%E7%AB%99/changzhangziyuan.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "资源站"
-    },
-    {
       "key": "百年直播_py",
       "name": "百年直播",
       "type": 3,
@@ -1939,6 +1915,18 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
+      "changeable": 0,
+      "timeout": 15,
+      "group": "直播"
+    },
+    {
+      "key": "聚合直播",
+      "name": "聚合直播",
+      "type": 3,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E8%81%9A%E5%90%88%E7%9B%B4%E6%92%AD.py",
+      "searchable": 0,
+      "quickSearch": 0,
+      "filterable": 1,
       "changeable": 0,
       "timeout": 15,
       "group": "直播"
@@ -1992,18 +1980,6 @@
       "group": "直播"
     },
     {
-      "key": "直播录屏_py",
-      "name": "直播录屏",
-      "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E7%9B%B4%E6%92%AD/zhiboluping.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "changeable": 0,
-      "timeout": 15,
-      "group": "直播"
-    },
-    {
       "key": "哔哩_直播",
       "name": "哔哩•直播",
       "type": 3,
@@ -2040,13 +2016,13 @@
       "group": "直播"
     },
     {
-      "key": "聚合直播",
-      "name": "聚合直播",
+      "key": "直播录屏_py",
+      "name": "直播录屏",
       "type": 3,
-      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/%E8%81%9A%E5%90%88%E7%9B%B4%E6%92%AD.py",
-      "searchable": 0,
-      "quickSearch": 0,
-      "filterable": 1,
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/sjzkn1/sjzkn/main/py/js/%E7%9B%B4%E6%92%AD/zhiboluping.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
       "changeable": 0,
       "timeout": 15,
       "group": "直播"
