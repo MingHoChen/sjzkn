@@ -2,6 +2,10 @@
 # 骚女汇 vfbai.snnvh82.sbs - TVBox/FongMi type=3
 # MacCMS v10 saonvhui 模板; 全站文本 document.write(d(base64)) 混淆, 清洗=删 span 垃圾
 import base64, json, re, threading, time
+try:
+    from Crypto.Cipher import AES as _AES
+except Exception:
+    _AES = None
 import urllib.parse, urllib.request, urllib.error, gzip, zlib
 try:
     from base.spider import Spider as _BaseSpider
@@ -10,7 +14,9 @@ except Exception:
         pass
 
 class Spider(_BaseSpider):
-    HOSTS = ["https://vfbai.snnvh82.sbs"]
+    # 域名池：该站域名频繁轮换，首页带"新网址/立即跳转"公告
+    # 2026-10-19 实测：vfbai.snnvh82.sbs 首页公告跳转 y8ke0.snnvh99.top
+    HOSTS = ["https://y8ke0.snnvh99.top", "https://vfbai.snnvh82.sbs"]
     UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
           "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36")
     # 内容屏蔽：偷拍自拍 / 网曝事件 / 强奸乱伦 / 少女萝莉 四类不进目录
@@ -22,18 +28,27 @@ class Spider(_BaseSpider):
         "YPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==")
 
     def __init__(self):
+        # ★ 铁律：先调基类 __init__（壳在基类里注入 siteKey / extend），
+        #   之后再建自己的状态；否则基类会把 self.extend 设成字符串 ''，
+        #   导致 self.extend.get() 直接 AttributeError。
+        try:
+            # ★ 必须走 super()：壳把 siteKey 注入在基类上，
+            #   裸调 _BaseSpider.__init__ 会拿到被替换前的名字 → siteKey 丢失
+            super(Spider, self).__init__()
+        except Exception:
+            try:
+                _BaseSpider.__init__(self)
+            except Exception:
+                pass
         self.host = self.HOSTS[0]
         self.extend = {}
         self._lock = threading.Lock()
         self._proxy_cache = {"val": None, "at": 0.0}
-        try:
-            _BaseSpider.__init__(self)
-        except Exception:
-            pass
 
     def init(self, extend=""):
-        # 壳在Loader 里 obj.put("siteKey", siteKey)，这里做兜底读取
-        self.siteKey = str(getattr(self, "siteKey", "") or self.extend.get("sitekey", "") or "")
+        # 壳在Loader 里 obj.put("siteKey", siteKey) 注入在【基类】上
+        # ★ 铁律：子类绝不能覆盖 self.siteKey（会让 localProxy 的 siteKey 路由失效）
+        #   → 这里只读不写，需要时用 _site_key() 取
         self.extend = self._parse_extend(extend)
         h = self.extend.get("host")
         if h:
@@ -61,6 +76,14 @@ class Spider(_BaseSpider):
             elif s.startswith("http"):
                 out["host"] = s
         return out
+
+    def action(self, action):
+        """壳的动作协议入口：本源不提供动作卡，返回空"""
+        return {"list": []}
+
+    def liveContent(self, url):
+        """壳的直播入口：本源不做直播，返回空"""
+        return ""
 
     def getName(self):
         return self.extend.get("name") or "骚女汇"
@@ -139,6 +162,195 @@ class Spider(_BaseSpider):
                     pass
             return data if raw else data.decode("utf-8", "ignore")
 
+    # ---------- 前端加密壳解密（AES-GCM 整页壳） ----------
+    # 2026-10-19 新架构：整页 HTML 以密文形式塞在 <script> 里，
+    #   浏览器用 crypto.subtle(AES-GCM) 解密后 document.write。
+    # 结构：const A=[[i,"b64片段"],...]  → 按 i 排序拼接 → atob → 密文
+    #   key = base64(A) XOR base64(B)   iv = base64(C)(12B)  aad = base64(D)
+    #   密文末尾16字节=GCM tag
+    _SH_ARR = re.compile(r'(?:const|let|var)\s+(\w+)\s*=\s*(\[\[.*?\]\])\s*(?:;|,)', re.S)
+
+    @staticmethod
+    def _sh_grab(s, name):
+        i = s.find(name)
+        while i >= 0:
+            j = s.find("[[", i)
+            if j >= 0 and j - i <= 30:
+                k = j; depth = 0
+                while k < len(s):
+                    if s[k] == "[": depth += 1
+                    elif s[k] == "]":
+                        depth -= 1
+                        if depth == 0: break
+                    k += 1
+                try:
+                    a = json.loads(s[j:k + 1])
+                except Exception:
+                    a = None
+                if isinstance(a, list) and a and isinstance(a[0], list):
+                    return a
+            i = s.find(name, i + 1)
+        return None
+
+    @staticmethod
+    def _sh_flat(arr):
+        try:
+            raw = "".join(x[1] for x in sorted(arr, key=lambda x: x[0]))
+            return base64.b64decode(raw + "=" * (-len(raw) % 4))
+        except Exception:
+            return b""
+
+    def _decrypt_shell(self, html):
+        """检测并解开整页 AES-GCM 加密壳；不是壳则原样返回。
+        变量名每次请求都变 → 必须按代码引用关系动态解析，不能写死名字。"""
+        if not html or "crypto.subtle" not in html or "AES-GCM" not in html:
+            return html
+        if _AES is None:
+            return html
+        m = re.search(r'<script[^>]*>(.*?)</script>', html, re.S)
+        if not m:
+            return html
+        s = m.group(1)
+
+        def _arr(name):
+            """取出 NAME=[[i,"b64"],...] 的数组。
+            必须用 name= 精确锚定：数组名常是变量名的前缀（rbWcoUeW8RB vs rbWcoUeW8RBD）"""
+            i = s.find(name + "=")
+            while i >= 0:
+                j = s.find("[[", i)
+                if j >= 0 and j - i <= 30:
+                    k = j; depth = 0
+                    while k < len(s):
+                        if s[k] == "[": depth += 1
+                        elif s[k] == "]":
+                            depth -= 1
+                            if depth == 0: break
+                        k += 1
+                    try:
+                        a = json.loads(s[j:k + 1])
+                    except Exception:
+                        a = None
+                    if isinstance(a, list) and a and isinstance(a[0], list):
+                        return a
+                i = s.find(name + "=", i + 1)
+            return None
+
+        def _bytes_of(name):
+            a = _arr(name)
+            if not a:
+                return None
+            try:
+                raw = "".join(x[1] for x in sorted(a, key=lambda x: x[0]))
+                return base64.b64decode(raw + "=" * (-len(raw) % 4))
+            except Exception:
+                return None
+
+        # --- 1) 找 key:  const K=new Uint8Array(32); for(...) K[i]=A[i]^B[i]
+        #     注意 A/B 的真实数组名与代码里的变量名常差一两个字符（如 rbWcoUeW8RB vs rbWcoUeW8RBD）
+        #     → 用 "变量=解码函数(拼接函数(数组名))" 这个模式反查真实数组名
+        key = None
+        km = re.search(
+            r'const\s+(\w+)\s*=\s*new\s+Uint8Array\(32\)\s*;\s*'
+            r'for\s*\(let\s+\w+\s*=\s*0\s*;\s*\w+\s*<\s*32\s*;\s*\w+\+\+\s*\)'
+            r'\s*\w+\[\w+\]\s*=\s*(\w+)\[\w+\]\s*\^\s*(\w+)\[\w+\]', s)
+        if km:
+            v1, v2 = km.group(2), km.group(3)
+            def _resolve(varname):
+                """变量 X=decode(join(ARR)) → 取 ARR 的字节"""
+                mm = re.search(re.escape(varname) + r'\s*=\s*\w+\(\w+\((\w+)\)\)', s)
+                if mm:
+                    bb = _bytes_of(mm.group(1))
+                    if bb:
+                        return bb
+                return _bytes_of(varname)
+            b1 = _resolve(v1); b2 = _resolve(v2)
+            if b1 and b2 and len(b1) == 32 and len(b2) == 32:
+                key = bytes(x ^ y for x, y in zip(b1, b2))
+
+        # --- 2) 找 iv / aad / 密文：按 decrypt({...iv:FLAT(IVNAME), additionalData:FLAT(AADNAME)...},KEY,FLAT(CTNAME)) ---
+        iv = aad = ct = None
+        dm = re.search(
+            r'crypto\.subtle\.decrypt\(\{\s*name\s*:\s*"AES-GCM"\s*,\s*'
+            r'iv\s*:\s*\w+\(\w+\((\w+)\)\)\s*,\s*'
+            r'additionalData\s*:\s*\w+\(\w+\((\w+)\)\)\s*,\s*'
+            r'tagLength\s*:\s*\d+\s*\}\s*,\s*\w+\s*,\s*\w+\(\w+\((\w+)\)\)\)', s)
+        if not dm:
+            # 宽松版：抓 decrypt 括号内所有 FLAT(NAME)
+            d2 = re.search(r'crypto\.subtle\.decrypt\((.{0,600}?)\)\)', s, re.S)
+            if d2:
+                names = re.findall(r'\w+\(\w+\((\w+)\)\)', d2.group(1))
+                if len(names) >= 3:
+                    ivn, aadn, ctn = names[0], names[1], names[-1]
+                    iv, aad, ct = _bytes_of(ivn), _bytes_of(aadn), _bytes_of(ctn)
+        else:
+            iv = _bytes_of(dm.group(1))
+            aad = _bytes_of(dm.group(2))
+            ct = _bytes_of(dm.group(3))
+
+        if key is None or ct is None or len(ct) < 32:
+            return html
+        if iv is None or len(iv) < 12:
+            iv = b"\x00" * 12
+        if aad is None:
+            aad = b""
+        for nonce in (iv[:12], iv[:16], iv):
+            try:
+                c = _AES.new(key, _AES.MODE_GCM, nonce=nonce)
+                if aad:
+                    c.update(aad)
+                pt = c.decrypt_and_verify(ct[:-16], ct[-16:])
+                return pt.decode("utf-8", "ignore")
+            except Exception:
+                continue
+        return html
+
+    # ---------- 域名轮换自愈 ----------
+    # 该站是"域名轮换型"站点：首页带「本站已启用新网址 / 立即跳转」公告，
+    # 旧域名随时停用。写死域名必然失效 → 每次抓首页都扫公告，自动把新域名入池。
+    RE_NEWHOST = re.compile(
+        r'<a[^>]+href=["\'](https?://[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,})["\'][^>]*>'
+        r'(?:\s*<[^>]+>\s*)*(?:立\s*即\s*跳\s*转|立即跳转|新地址|马上访问|点击跳转)', re.I)
+    _HOSTLOCK = threading.Lock()
+    _DISCOVERED = []          # 运行期发现的新域名（模块级，壳每次 new Spider 也保留）
+    _LAST_DISCOVER = 0.0
+
+    def _discover_host(self, html):
+        """从首页公告里抠出新域名，插到池子最前面。返回新域名或 None"""
+        if not html or "立即跳转" not in html and "新网址" not in html:
+            return None
+        found = None
+        for m in self.RE_NEWHOST.finditer(html):
+            d = m.group(1)
+            if not d or d == self.host:
+                continue
+            try:
+                host = urllib.parse.urlparse(d).netloc
+            except Exception:
+                continue
+            if not host or host in ("www.w3.org",):
+                continue
+            # 排除明显第三方（CDN/图床/导航/统计）
+            if re.search(r'(imgmbr|\.top/cdn|cloudflare|google|stat|counter|\.js$)', host, re.I):
+                continue
+            found = "https://" + host
+            break
+        if not found:
+            return None
+        with self._HOSTLOCK:
+            if found not in self._DISCOVERED:
+                self._DISCOVERED.insert(0, found)
+            if found not in self.HOSTS:
+                self.HOSTS.insert(0, found)
+        return found
+
+    def _all_hosts(self):
+        with self._HOSTLOCK:
+            out = list(self.HOSTS)
+            for d in self._DISCOVERED:
+                if d not in out:
+                    out.insert(0, d)
+        return out
+
     def _fetch(self, url, referer=None, timeout=15, img=False, retries=2):
         headers = {
             "User-Agent": self.UA,
@@ -171,6 +383,31 @@ class Spider(_BaseSpider):
             except Exception:
                 if i < retries:
                     time.sleep(0.4)
+        return None
+
+    def _fetch_any(self, path, referer=None, timeout=15):
+        """按域名池顺序抓；主域挂了就自动换下一个域。path 以 / 开头。"""
+        hosts = self._all_hosts()
+        for idx, h in enumerate(hosts):
+            old_host = self.host
+            self.host = h
+            try:
+                html = self._fetch(h + path, referer=referer or (h + "/"), timeout=timeout)
+            except Exception:
+                html = None
+            finally:
+                self.host = old_host
+            if html and len(html) > 200:
+                # 整页加密壳 → 先解开
+                if "crypto.subtle" in html:
+                    dec = self._decrypt_shell(html)
+                    if dec and len(dec) > 200:
+                        html = dec
+                # 抓到了就顺手扫公告，可能又要换域
+                self._discover_host(html)
+                if idx > 0:
+                    self.host = h          # 锁定到活着的域
+                return html
         return None
 
     @staticmethod
@@ -210,16 +447,20 @@ class Spider(_BaseSpider):
         return re.sub(r"\s+", " ", t).strip()
 
     RE_CAT = re.compile(
-        r'/list\.php\?id=(\d+)&page=1"?\s*>\s*<script[^>]*>document\.write\(d\(\'([^\']+)\'\)')
+        r'(?:https?://[^"/]+)?/list\.php\?id=(\d+)&page=1"?\s*>\s*'
+        r'(?:<script[^>]*>document\.write\(d\(\'([^\']+)\'\)|([^<]+))')
     RE_ZONE = re.compile(r'<dt><a href="javascript:;">(.*?)</a></dt>(.*?)</dl>', re.S)
 
     def _classes(self):
-        html = self._fetch(self.host + "/")
+        html = self._fetch_any("/")
+        # 首页公告里可能带新网址 → 自动入池（域名轮换自愈）
+        if html:
+            self._discover_host(html)
         if html:
             out = []
             for _z, body in self.RE_ZONE.findall(html):
-                for cid, b64 in self.RE_CAT.findall(body):
-                    n = self._dec(b64)
+                for cid, b64, raw in self.RE_CAT.findall(body):
+                    n = self._dec(b64) if b64 else self._clean(raw)
                     if n:
                         out.append({"type_id": cid, "type_name": n})
             out = [c for c in out if c["type_id"] not in self.BLOCK_CIDS]
@@ -286,12 +527,19 @@ class Spider(_BaseSpider):
             return self._proxy_img(url)
         return url
 
+    def _site_key(self):
+        """取壳注入的 siteKey（只读，绝不写回 self.siteKey）"""
+        v = getattr(self, "siteKey", "")
+        if v:
+            return str(v)
+        return str(self.extend.get("sitekey", "") or "")
+
     def _proxy_img(self, url):
         b = base64.b64encode(url.encode("utf-8")).decode("ascii")
         b = urllib.parse.quote(b, safe="")
         # ★ BaseLoader.proxy: params 里有 siteKey 就走 getSpider(siteKey) 分支，
         #   不依赖 PyLoader.recent（recent==null 会直接返回 null → Invalid proxy response）
-        sk = str(getattr(self, "siteKey", "") or "")
+        sk = self._site_key()
         if sk:
             return "%s?do=py&siteKey=%s&type=img&url=%s" % (self._proxy_base(), sk, b)
         return "%s?do=py&type=img&url=%s" % (self._proxy_base(), b)
@@ -319,13 +567,13 @@ class Spider(_BaseSpider):
 
     def homeContent(self, filter=False):
         cls = self._classes()
-        html = self._fetch(self.host + "/")
+        html = self._fetch_any("/")
         vod = self._parse_list(html)[:36]
         self._remember(vod)
         return {"class": cls, "vod": vod}
 
     def homeVideoContent(self):
-        html = self._fetch(self.host + "/")
+        html = self._fetch_any("/")
         vod = self._parse_list(html)[:36]
         self._remember(vod)
         return {"list": vod, "page": 1, "pagecount": 1,
@@ -350,8 +598,7 @@ class Spider(_BaseSpider):
         if cid in self.BLOCK_CIDS:
             return {"list": [], "page": pg, "pagecount": 1,
                     "limit": 0, "total": 0}
-        url = "%s/list.php?id=%s&page=%d" % (self.host, cid, pg)
-        html = self._fetch(url, referer=self.host + "/")
+        html = self._fetch_any("/list.php?id=%s&page=%d" % (cid, pg))
         items = self._parse_list(html)
         total, pc = self._count(html)
         if not items:
@@ -369,18 +616,32 @@ class Spider(_BaseSpider):
                 return m.group(1).replace("\\/", "/").strip()
         return ""
 
-    def detailContent(self, ids):
-        vid = str(ids[0] if isinstance(ids, (list, tuple)) else ids)
-        url = "%s/video.php?id=%s" % (self.host, vid)
-        html = self._fetch(url, referer=self.host + "/")
-        if not html:
-            return {"list": [{"vod_id": vid, "vod_name": "加载失败", "vod_pic": "",
-                              "vod_play_from": "骚女汇", "vod_play_url": "正片$"}]}
+    @staticmethod
+    def _page_title(html):
+        """取页面标题：兼容 旧站 document.title=d('b64') 与 新站明文 <title>"""
         name = ""
         m = re.search(r"document\.title\s*=\s*d\('([^']+)'\)", html)
         if m:
-            name = self._dec(m.group(1))
+            try:
+                name = base64.b64decode(m.group(1)).decode("utf-8", "ignore")
+            except Exception:
+                name = ""
+        if not name:
+            m = re.search(r"<title>([^<]{1,200})</title>", html, re.S)
+            if m:
+                name = m.group(1)
         name = re.sub(r"^\[[^\]]*\]\s*", "", name).strip()
+        # 去掉「- 骚女汇」这类站点后缀
+        name = re.sub(r"\s*[-_|]\s*骚女汇\s*$", "", name).strip()
+        return name
+
+    def detailContent(self, ids):
+        vid = str(ids[0] if isinstance(ids, (list, tuple)) else ids)
+        html = self._fetch_any("/video.php?id=%s" % vid)
+        if not html:
+            return {"list": [{"vod_id": vid, "vod_name": "加载失败", "vod_pic": "",
+                              "vod_play_from": "骚女汇", "vod_play_url": "正片$"}]}
+        name = self._page_title(html)
         if self._blocked(name):
             return {"list": [{"vod_id": vid, "vod_name": "已屏蔽",
                               "vod_pic": "", "vod_play_from": "骚女汇",
@@ -389,8 +650,16 @@ class Spider(_BaseSpider):
         pic = self._PICS.get(vid, "")
         if not pic:
             pic = self._find_pic(name, vid, html)
-        play = self._extract_m3u8(html) or ("s0@@" + url)
-        ep = "正片$%s$$$正片$s0@@%s" % (play, url)
+        # 新架构：详情页也是加密壳 → 先解开
+        if "crypto.subtle" in html:
+            d2 = self._decrypt_shell(html)
+            if d2 and len(d2) > 200:
+                html = d2
+                name = self._page_title(html)
+        # 回源页地址（供原页嗅探线用）
+        src_url = "%s/video.php?id=%s" % (self.host, vid)
+        play = self._extract_m3u8(html)
+        ep = "正片$%s" % play if play else "正片$s0@@%s" % src_url
         return {"list": [{"vod_id": vid, "vod_name": name or ("影片 " + vid),
                           "vod_pic": pic, "vod_remarks": "正片",
                           "vod_play_from": "骚女汇·直连$$$骚女汇·原页",
