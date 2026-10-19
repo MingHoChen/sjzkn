@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/python
-import sys, re, json, base64, html, os
+import urllib.request
+import sys, re, json, base64, html, os, urllib.request
 from urllib.parse import quote, unquote, urljoin, urlparse
 
 try: from lxml import etree
@@ -22,7 +23,7 @@ except ImportError:
         def searchContent(self, key, quick, pg='1'): pass
         def isVideoFormat(self, url): pass
         def manualVideoCheck(self): pass
-        def localProxy(self, param): pass
+        def localProxy(self, param=None): pass
 
 def fix_url(url, host):
     if not url: return ""
@@ -98,6 +99,7 @@ class Spider(BaseSpider):
     def __init__(self):
         super().__init__()
         self.host = "https://www123.lol"
+        self._HOST_POOL = []
         self.name = "寂寞阿姨_www123_lol"
         self.s = requests.Session() if requests else None
         self.headers = {
@@ -132,7 +134,7 @@ class Spider(BaseSpider):
     def manualVideoCheck(self):
         return False
 
-    def localProxy(self, param):
+    def localProxy(self, param=None):
         return [200, "video/MP2T", b"", {}]
 
     def _fetch(self, url, referer=None):
@@ -456,3 +458,50 @@ class Spider(BaseSpider):
             print(f"[{self.name}] 搜索失败: {e}")
             return {"list": [], "page": int(pg), "pagecount": 1,
                     "limit": 24, "total": 0}
+
+    # ---------- 域名自愈（2026-10-19 域名普查加装） ----------
+    _RE_NEWDOM = re.compile(
+        r'<a[^>]+href=["\'](https?://[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,})["\'][^>]*>'
+        r'(?:\s*<[^>]+>\s*)*(?:立\s*立即\s*跳\s*转|立即跳转|新地址|马上访问|点击跳转|进入网站|新网址)',
+        re.I)
+    _SKIP_HOST = re.compile(
+        r'(google|baidu|t\.me|telegram|cloudflare|jsdelivr|jsdmirror|github|ghproxy|'
+        r'51\.la|cnzz|alicdn|weixin|qq\.com|weibo|gstatic)', re.I)
+
+    def _pool(self):
+        p = list(self._HOST_POOL)
+        cur = getattr(self, "host", "") or ""
+        if cur and cur not in p:
+            p.insert(0, cur)
+        return p
+
+    def _discover(self, html):
+        """首页公告里抠新域名入池（该类站域名频繁轮换）"""
+        if not html:
+            return None
+        if not any(k in html for k in ("新网址", "立即跳转", "进入网站", "防失联", "永久地址")):
+            return None
+        for m in self._RE_NEWDOM.finditer(html):
+            try:
+                host = urlparse(m.group(1)).netloc
+            except Exception:
+                continue
+            if not host or self._SKIP_HOST.search(host):
+                continue
+            full = "https://" + host
+            if full not in self._pool():
+                self._HOST_POOL.insert(0, full)
+                return full
+        return None
+
+
+    def action(self, action):
+        """壳的动作协议入口：本源不提供动作卡"""
+        return {"list": []}
+
+    def liveContent(self, url):
+        """壳的直播入口：本源不做直播"""
+        return ""
+
+    def getDependence(self):
+        return []

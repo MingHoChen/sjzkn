@@ -47,7 +47,6 @@ _PARSE_MAP = {
 
 # 备用解析接口 (仅保留供参考)
 _BACKUP_PARSERS = [
-    ("极速", "https://jx.2s0.cn/player/?url="),
     ("super", "https://super.playr.top/?url="),
     ("fongmi", "https://json.fongmi.cc/web?url="),
     ("Jn1", "https://yparse.jn1.cc/index.php?url="),

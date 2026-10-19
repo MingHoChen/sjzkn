@@ -25,8 +25,10 @@ class Spider(BaseSpider):
         return "徐娘阁"
 
     def init(self, extend=""):
-        self.host = "https://1jpnygzply.xuniangex.buzz"
-        self.publishUrl = "https://www.xuniangfin.info"
+        # 2026-10-19 域名普查：1jpnygzply 子域与旧发布页 www.xuniangfin.info 均已失效
+        # → 切到同站主域 www.xuniangex.buzz（已实测五接口全绿），发布页改用主域发布邮箱页
+        self.host = "https://www.xuniangex.buzz"
+        self.publishUrl = "https://www.xuniangex.buzz"
         print(f"[init] 当前使用域名: {self.host}")
         print(f"[init] 发布页: {self.publishUrl}")
 

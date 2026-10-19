@@ -66,14 +66,13 @@ class Spider(_BaseSpider):
                            "Chrome/150.0.0.0 Safari/537.36"),
         }
         # 直链解析站（kptv 后端已不稳定，仅作快速尝试；命中即直链播放）
-        self.parse_api = "https://jx.kptv.us/?url="
+        self.parse_api = "https://jx.xmflv.com/?url="
         # WebView 解析站列表：壳子用内置浏览器打开这些页面完成解析播放。
         # （2026 年主流解析站已全部转浏览器端 JS 解析，纯 HTTP 无法取直链，
         #   由壳子 WebView 打开解析站播放页是当前唯一通用方案）
         self.parse_sites = [
             "https://jx.xmflv.com/?url=",
             "https://jx.playerjy.com/?url=",
-            "https://jx.2s0.cn/?url=",
             "https://jx.m3u8.tv/jiexi/?url=",
             "https://www.daga.cc/vip1/?url=",
             "https://jx.xmflv.cc/?url=",

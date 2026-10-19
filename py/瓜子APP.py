@@ -465,7 +465,7 @@ t5lYKfpe8k83ZA==
                 data = self.get_data(params, '/App/Resource/VurlDetail/showOne', use_cache=False)
                 if data and 'url' in data:
                     return {"parse": 0, "playUrl": "", "url": data['url'],
-                            "header": json.dumps({"User-Agent": "Lavf/57.83.100", "Referer": "http://WJiZxLXA2.com/"}), 'danmaku': 'http://127.0.0.1:9978/proxy?do=diydanmu'}
+                            "header": json.dumps({"User-Agent": "Lavf/57.83.100", "Referer": "http://api.6a7nnf7.com/"}), 'danmaku': 'http://127.0.0.1:9978/proxy?do=diydanmu'}
             return {"parse": 0, "playUrl": "", "url": ""}
         except Exception as e:
             print(f"播放解析失败: {e}")

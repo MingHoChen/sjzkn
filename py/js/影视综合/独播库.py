@@ -200,8 +200,8 @@ class Spider(Spider):
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
             'Accept-Encoding': 'gzip, deflate',
-            'origin': 'https://w.duboku.io',
-            'referer': 'https://w.duboku.io/',
+            'origin': 'https://www.dbku.tv',
+            'referer': 'https://www.dbku.tv/',
             'priority': 'u=1, i'
         }
         return { 'jx': 0, 'parse': 0, 'url': self.decode(res['HId']), 'header': headers}

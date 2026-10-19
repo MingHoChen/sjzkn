@@ -45,7 +45,6 @@ PARSE_APIS = [
     {"name": "789解析2", "url": "https://jiexi.789jiexi.com/?url="},
     {"name": "我看VIP", "url": "https://a.wkvip.net/?url="},
     {"name": "8090", "url": "https://www.8090g.cn/?url="},
-    {"name": "极速解析", "url": "https://jx.2s0.cn/player/?url="},
     {"name": "super", "url": "https://super.playr.top/?url="},
     {"name": "fongmi", "url": "https://json.fongmi.cc/web?url="},
     {"name": "8090备用", "url": "https://www.8090g.cn/jiexi/?url="},
