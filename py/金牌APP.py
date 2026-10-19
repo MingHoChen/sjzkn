@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import urllib.request
 import sys
 import hashlib
 import time
@@ -11,11 +12,18 @@ from base.spider import Spider
 
 
 class Spider(Spider):
+    def __init__(self):
+        try:
+            super().__init__()
+        except Exception:
+            pass
+
     def getName(self):
         return "Aidianying"
 
     def init(self, extend):
         self.home_url = 'https://m.sdzhgt.com/'
+        self._HOST_POOL = []
         self.ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
         self.error_url = "https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-720p.mp4"
 
@@ -458,11 +466,57 @@ class Spider(Spider):
 
         return {"url": play_url, "header": h2, "parse": 0, "jx": 0}
 
-    def localProxy(self, params):
-        pass
+    def localProxy(self, param=None):
+        # 壳按 list.get(0/1/2) 取值 → 至少要 3 位，header 必须 dict
+        return [200, "video/MP2T", b"", {}]
 
     def destroy(self):
         return '正在Destroy'
+
+
+    # ---------- 域名自愈（2026-10-19 域名普查加装） ----------
+    _RE_NEWDOM = re.compile(
+        r'<a[^>]+href=["\'](https?://[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,})["\'][^>]*>'
+        r'(?:\s*<[^>]+>\s*)*(?:立\s*立即\s*跳\s*转|立即跳转|新地址|马上访问|点击跳转|进入网站|新网址)',
+        re.I)
+    _SKIP_HOST = re.compile(
+        r'(google|baidu|t\.me|telegram|cloudflare|jsdelivr|jsdmirror|github|ghproxy|'
+        r'51\.la|cnzz|alicdn|weixin|qq\.com|weibo|gstatic)', re.I)
+
+    def _pool(self):
+        p = list(self._HOST_POOL)
+        cur = getattr(self, "host", "") or ""
+        if cur and cur not in p:
+            p.insert(0, cur)
+        return p
+
+    def _discover(self, html):
+        """首页公告里抠新域名入池（该类站域名频繁轮换）"""
+        if not html:
+            return None
+        if not any(k in html for k in ("新网址", "立即跳转", "进入网站", "防失联", "永久地址")):
+            return None
+        for m in self._RE_NEWDOM.finditer(html):
+            try:
+                host = urlparse(m.group(1)).netloc
+            except Exception:
+                continue
+            if not host or self._SKIP_HOST.search(host):
+                continue
+            full = "https://" + host
+            if full not in self._pool():
+                self._HOST_POOL.insert(0, full)
+                return full
+        return None
+
+
+    def action(self, action):
+        """壳的动作协议入口：本源不提供动作卡"""
+        return {"list": []}
+
+    def liveContent(self, url):
+        """壳的直播入口：本源不做直播"""
+        return ""
 
 if __name__ == '__main__':
     pass

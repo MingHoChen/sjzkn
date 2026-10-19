@@ -13,10 +13,12 @@ class Spider(Spider):
         return "教授"
 
     def init(self, extend=""):
+        # 域名池：实测 zrq/jsaa100 主域已死或超时，jsqp / play 子域可用 → 活域排前面
         self.hosts = [
+            "https://jsqp.jsaa100.vip",
+            "https://play.jsaa100.vip",
             "https://zrq.jsaa100.vip:8601",
             "https://zrq.jsaa100.vip",
-            "https://jsaa100.vip:8601",
         ]
         self.host = self.hosts[0]
         self.ua = "Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 Chrome/120.0 Mobile Safari/537.36"

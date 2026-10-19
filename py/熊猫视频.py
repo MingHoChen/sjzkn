@@ -28,7 +28,7 @@ class Spider(Spider):
         pass
 
     def homeContent(self, filter):
-        # https://yaselulu.autos/?page_id=9
+        # https://www.xm66xm.com/?page_id=9
 
         data = {"name": "John", "age": 31, "city": "New York"}
         res = requests.post('https://spiderscloudcn2.51111666.com/getDataInit', headers=headerx, json=data)
@@ -86,7 +86,7 @@ class Spider(Spider):
         if not pg:
             pg = 1
 
-        # https://yaselulu.autos/?cat=3754&paged=1
+        # https://www.xm66xm.com/?cat=3754&paged=1
 
         videos = []
         try:
@@ -184,7 +184,7 @@ class Spider(Spider):
         return result
 
     def searchContentPage(self, key, quick, page):
-        # https://yaselulu.autos/?s=%E6%88%91%E7%9A%84&paged=2
+        # https://www.xm66xm.com/?s=%E6%88%91%E7%9A%84&paged=2
 
         result = {}
         videos = []

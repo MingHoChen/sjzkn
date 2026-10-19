@@ -36,6 +36,17 @@ class Spider(Spider):
         print(f"使用站点: {self.host}")
         pass
 
+    def __init__(self):
+
+        try:
+
+            super().__init__()
+
+        except Exception:
+
+            pass
+
+
     def getName(self):
         return "🌈 51吸瓜"
 
@@ -328,7 +339,7 @@ class Spider(Spider):
         print(f"播放请求: parse={p}, url={url}")
         return {'parse': p, 'url': url, 'header': self.headers}
 
-    def localProxy(self, param):
+    def localProxy(self, param=None):
         if param.get('type') == 'img':
             res=requests.get(param['url'], headers=self.headers, proxies=self.proxies, timeout=10)
             return [200,res.headers.get('Content-Type'),self.aesimg(res.content)]
@@ -393,10 +404,12 @@ class Spider(Spider):
     def get_working_host(self):
         """Get working host from known dynamic URLs"""
         # Known working URLs from the dynamic gateway
+        # 2026-10-19 域名普查：原 vgwtswi.xyz 三个子域全部失效
+        # → 换成 51吃瓜 官方入口页给出的线路（wacg4.com 是入口跳转页，真实站是 vdnplsov.cc）
         dynamic_urls = [
-            'https://artist.vgwtswi.xyz',
-            'https://ability.vgwtswi.xyz', 
-            'https://am.vgwtswi.xyz'
+            'https://51cg1.com',
+            'https://cg51.com',
+            'https://www.vdnplsov.cc',
         ]
         
         # Test each URL to find a working one
@@ -477,3 +490,15 @@ class Spider(Spider):
         except Exception as e:
             print(f"{str(e)}")
             return pq(data.encode('utf-8'))
+
+
+    def action(self, action):
+        """壳的动作协议入口：本源不提供动作卡"""
+        return {"list": []}
+
+    def liveContent(self, url):
+        """壳的直播入口：本源不做直播"""
+        return ""
+
+    def getDependence(self):
+        return []

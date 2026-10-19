@@ -53,7 +53,7 @@ class Spider(Spider):
         m = re.search(r'image\.baidu\.com/search/down\?url=([^&]+)', url)
         if m:
             inner = unquote(m.group(1))
-            if 'ffeiimg.com/upload/' in inner:
+            if 'ffeiimg.com//upload/' in inner:
                 url = inner
         return url.replace('ffeiimg.com/upload/', 'ffeiimg.com//upload/', 1)
 

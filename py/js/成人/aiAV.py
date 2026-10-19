@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 # by @嗷呜
+import re, urllib.request
+import urllib.request
 import sys
 from base64 import b64encode, b64decode
 from Crypto.Hash import MD5, SHA256
@@ -11,6 +13,17 @@ import time
 
 
 class Spider(Spider):
+
+    def __init__(self):
+
+        try:
+
+            super().__init__()
+
+        except Exception:
+
+            pass
+
 
     def getName(self):
         return "lav"
@@ -32,6 +45,8 @@ class Spider(Spider):
         pass
 
     host = "http://sir_new.tiansexyl.tv"
+
+    _HOST_POOL = ["https://www.tiansexyl.tv"]
     t = str(int(time.time() * 1000))
     headers = {'User-Agent': 'okhttp-okgo/jeasonlzy', 'Connection': 'Keep-Alive',
                'Content-Type': 'application/x-www-form-urlencoded'}
@@ -147,7 +162,7 @@ class Spider(Spider):
         result["header"] = self.hh
         return result
 
-    def localProxy(self, param):
+    def localProxy(self, param=None):
         url = param["url"]
         if param.get('type') == "m3u8":
             return self.vod(b64decode(url).decode('utf-8'))
@@ -210,3 +225,42 @@ class Spider(Spider):
             decrypted = cipher.decrypt(data_bytes)
             return json.loads(decrypted.decode('utf-8'))
 
+
+
+    # ---------- 域名自愈（2026-10-19 域名普查加装） ----------
+    _RE_NEWDOM = re.compile(
+        r'<a[^>]+href=["\'](https?://[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,})["\'][^>]*>'
+        r'(?:\s*<[^>]+>\s*)*(?:立\s*立即\s*跳\s*转|立即跳转|新地址|马上访问|点击跳转|进入网站|新网址)',
+        re.I)
+    _SKIP_HOST = re.compile(
+        r'(google|baidu|t\.me|telegram|cloudflare|jsdelivr|jsdmirror|github|ghproxy|'
+        r'51\.la|cnzz|alicdn|weixin|qq\.com|weibo|gstatic)', re.I)
+
+    def _pool(self):
+        p = list(getattr(self, "_HOST_POOL", []) or [])
+        cur = getattr(self, "host", "") or ""
+        if cur and cur not in p:
+            p.insert(0, cur)
+        return p
+
+    def _discover(self, html):
+        """首页公告里抠新域名入池（该类站域名频繁轮换）"""
+        if not html:
+            return None
+        if not any(k in html for k in ("新网址", "立即跳转", "进入网站", "防失联", "永久地址")):
+            return None
+        for m in self._RE_NEWDOM.finditer(html):
+            try:
+                host = urlparse(m.group(1)).netloc
+            except Exception:
+                continue
+            if not host or self._SKIP_HOST.search(host):
+                continue
+            full = "https://" + host
+            if full not in self._pool():
+                self._HOST_POOL.insert(0, full)
+                return full
+        return None
+
+    def getDependence(self):
+        return []

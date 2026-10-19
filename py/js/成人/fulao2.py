@@ -40,7 +40,7 @@ X_INFO_PLAY = "eyJjcGFnZSI6InBsYXkiLCJwbGF0Zm9ybSI6MiwicHBhZ2UiOiJjZW5zb3IiLCJ2Z
 
 STREAM_HOSTS = [
  ("VIP高速3", "https://stream.yxdesign.art"),
- ("VIP高速1", "https://stream.lingqi.co"),
+ ("VIP高速1", "https://stream.yxdesign.art"),
  ("VIP高速2", "https://stream-hua.hangbo.xyz"),
  ("海外线路", "https://stream.ass6.store"),
 ]

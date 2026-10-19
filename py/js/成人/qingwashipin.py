@@ -81,7 +81,7 @@ def _start_proxy():
     return _PIC_SERVER.server_address[1]
 
 def _pic_url(u):
-    if not (u.startswith('http') and 'cklou.com' in u):
+    if not (u.startswith('http') and 'dbb557.com' in u):
         return u
     port = _start_proxy()
     if not port:

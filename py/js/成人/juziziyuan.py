@@ -22,7 +22,7 @@ except ImportError:
             return r
 
 HOST = 'https://82729mka.jzac401.vip:8751'
-PIC = 'https://wstgpic.bdpsjp.com'
+PIC = ''
 UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36'
 CATEGORIES = {'10': '国产', '11': '传媒', '12': '日韩', '14': '无码', '15': '欧美', '16': '动漫', '18': '主播', '19': '同性', '20': '三级', '21': '黑白'}
 EP = {

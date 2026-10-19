@@ -138,7 +138,7 @@ class Spider(BaseSpider):
         try: 
             iv = int(vid); 
             group = iv - (iv % 1000); 
-            return f'https://rimg.iomycdn.com/videos_screenshots/{group}/{iv}/preview.jpg'
+            return ''  # 原图床 rimg.iomycdn.com 已失效
         except Exception: 
             return ''
     
